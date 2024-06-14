@@ -1,8 +1,8 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Typehackery
+description: a collection of stuff that isn't supposed to be written in the type system but is.
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+url: https://mchccn.github.io/typehackery
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+    Repository: https://github.com/mchccn/typehackery
