@@ -1,4 +1,9 @@
-# Typehackery
+---
+layout: default
+title: home
+---
+
+# typehackery
 
 **This page is introductory and contains no actual material. [[Skip]]()**
 
