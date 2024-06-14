@@ -35,7 +35,7 @@ I'm simply just putting information out there for those who want to go deeper, b
 
 If you want to challenge yourself, try [mchccn/butcanyoudoitintypes][challenges].
 
-[skip]: ./concepts/index.md
+[skip]: ./concepts
 [duck]: https://en.wikipedia.org/wiki/Duck_typing
 [nominal]: https://en.wikipedia.org/wiki/Nominal_type_system
 [variance]: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
