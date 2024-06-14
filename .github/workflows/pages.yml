@@ -3,7 +3,7 @@ name: Deploy Jekyll site to Pages
 on:
     push:
         branches:
-            - master
+            - "master"
         paths:
             - "docs/**"
     workflow_dispatch:
