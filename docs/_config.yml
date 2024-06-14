@@ -3,6 +3,8 @@ description: a collection of stuff that isn't supposed to be written in the type
 theme: just-the-docs
 color_scheme: typehackery
 
+favicon_ico: "icon.png"
+
 url: https://mchccn.github.io/typehackery
 
 aux_links:
