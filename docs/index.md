@@ -6,7 +6,7 @@ nav_order: 1
 
 # typehackery
 
-**This page is introductory and contains no actual material. [[Skip]]()**
+**This page is introductory and contains no actual material. [\[Skip\]][skip]**
 
 Welcome! TypeScript's type system is extremely powerful, even Turing Complete.
 It's a shame that only so few members of the community use TypeScript to its fullest potential.
@@ -35,6 +35,7 @@ I'm simply just putting information out there for those who want to go deeper, b
 
 If you want to challenge yourself, try [mchccn/butcanyoudoitintypes][challenges].
 
+[skip]: ./concepts/index.md
 [duck]: https://en.wikipedia.org/wiki/Duck_typing
 [nominal]: https://en.wikipedia.org/wiki/Nominal_type_system
 [variance]: https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
