@@ -23,17 +23,19 @@ type IsUnion<T> = [T] extends [UnionToIntersection<T>] ? false : true;
 type Increment<X extends number> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17][X];
 type Decrement<X extends number> = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15][X];
 
-type SetAtCoordsHelper<
-    Row extends readonly unknown[],
-    TX extends number,
-    X extends number,
-    Value extends number,
-    LHalf extends readonly unknown[][],
-    RHalf extends readonly unknown[][],
-    Output extends readonly unknown[] = []
-> = Row extends [infer First, ...infer Rest]
-    ? SetAtCoordsHelper<Rest, TX, Increment<X>, Value, LHalf, RHalf, X extends TX ? [...Output, Value] : [...Output, First]>
-    : [...LHalf, Output, ...RHalf];
+namespace SetAtCoords {
+    export type SetAtX<
+        Row extends readonly unknown[],
+        TX extends number,
+        X extends number,
+        Value extends number,
+        LHalf extends readonly unknown[][],
+        RHalf extends readonly unknown[][],
+        Output extends readonly unknown[] = []
+    > = Row extends [infer First, ...infer Rest]
+        ? SetAtX<Rest, TX, Increment<X>, Value, LHalf, RHalf, X extends TX ? [...Output, Value] : [...Output, First]>
+        : [...LHalf, Output, ...RHalf];
+}
 
 type SetAtCoords<
     Input extends readonly unknown[][],
@@ -45,7 +47,7 @@ type SetAtCoords<
     Output extends readonly unknown[][] = []
 > = Input extends [infer First extends unknown[], ...infer Rest extends readonly unknown[][]]
     ? Y extends TY
-        ? SetAtCoordsHelper<First, TX, X, Value, Output, Rest>
+        ? SetAtCoords.SetAtX<First, TX, X, Value, Output, Rest>
         : SetAtCoords<Rest, TY, TX, Value, Increment<Y>, 0, readonly [...Output, First]>
     : Output;
 
@@ -78,3 +80,5 @@ type Puzzle_3aa6fb7a<Input extends readonly number[][], Y extends number = 0, X 
             : Puzzle_3aa6fb7a<Input, Y, Increment<X>>
         : Puzzle_3aa6fb7a<Input, Increment<Y>, 0>
     : Input;
+
+export { Puzzle_3aa6fb7a };
