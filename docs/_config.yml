@@ -6,3 +6,8 @@ url: https://mchccn.github.io/typehackery
 
 aux_links:
     Repository: https://github.com/mchccn/typehackery
+
+search_enabled: true
+
+mermaid:
+    version: "10.9.1"
