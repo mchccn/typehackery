@@ -22,6 +22,7 @@ You should have a basic understanding of the following ideas:
 -   [Homomorphism][homo]
 -   [Finite State Machines][fsm]
 -   [Functional Programming][fp]
+-   [Soundness][sound]
 
 If you don't understand some of them, a quick Google will do just fine.
 I will do my best to explain them in due time.
@@ -45,4 +46,5 @@ If you want to challenge yourself, try [mchccn/butcanyoudoitintypes][challenges]
 [homo]: https://en.wikipedia.org/wiki/Homomorphism
 [fsm]: https://en.wikipedia.org/wiki/Finite-state_machine
 [fp]: https://en.wikipedia.org/wiki/Functional_programming
+[sound]: https://en.wikipedia.org/wiki/Soundness
 [challenges]: https://github.com/mchccn/butcanyoudoitintypes

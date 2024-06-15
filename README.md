@@ -23,3 +23,4 @@ if you do not understand any of the following topics or ideas, the book will not
 -   Homomorphism
 -   Finite State Machines
 -   Functional Programming
+-   Soundness
