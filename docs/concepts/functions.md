@@ -145,8 +145,6 @@ graph LR;
     C("F<​A>") <--> D("F<​B>");
 ```
 
-In a sound type system, this essentially never happens for any non-trivial definition. Lucky for us, TypeScript is unsound.
-
 It is possible to demonstrate that only _constant_ types are truly bivariant:
 
 ```ts
@@ -160,6 +158,8 @@ type F<T> = number;
 5. `F<T>` and `F<unknown>` are the same for all T.
 6. `F<T>` must be a constant.
 
+In a sound type system, this essentially never happens for any non-trivial definition.
+Lucky for us, TypeScript is unsound.
 There is only one notable case where TypeScript demonstrates bivariance, and that is the parameter type of methods:
 
 ```ts
