@@ -179,4 +179,56 @@ function bivariance<B, A extends B>(a: A, b: B, biA: F<A>, biB: F<B>) {
 
 ### `in`/`out` modifiers
 
+Another way to think about variance in functions is input/output.
+You already know that outputs are covariant (return types) and inputs are contravariant (parameter types).
+[TypeScript 4.7][variancenotes] introduced optional annotations for variance of generic type parameters: `in`/`out`.
+
+If a type parameter is solely used as an _input_, then annotate it with `in` (contravariance):
+
+```ts
+type F<in V> = (value: V) => void;
+```
+
+If a type parameter is solely used as an _output_, then annotate it with `out` (covariance):
+
+```ts
+type F<out V> = () => V;
+```
+
+If a type parameter is used in both contexts, you can annotate it with `in out` (invariance):
+
+```ts
+type F<in out V> = (value: V) => V;
+```
+
+But why would you bother annotating if TypeScript can figure it out for you?
+One of the most important benefits to annotating variance that we will come to know soon is performance.
+Explicitly annotating types allows the compiler to do less work comparing and computing variance and to do more work computing the types we want.
+
+Another reason for annotating variance is that it allows the compiler to check our work.
+If we use the type parameter incorrectly, say, an `in` (input, contravariant) parameter in an output context, it can tell us that it's not supposed to be there!
+
+```ts
+type F<in V> = () => V;
+//     ~~~~
+//     Type 'F<super-V>' is not assignable to type 'F<sub-V>' as implied by variance annotation.
+//         Type 'super-V' is not assignable to type 'sub-V'.
+```
+
+If you don't understand, replace `super-V` with `B` and `sub-V` with `A`.
+Again, assuming that `A` is assignable to `B`, if `F` is defined as `F<in V>`, `F<B>` should be assignable to `F<A>`.
+However, since `V` is being used in an output context, it violates the `in` annotation, and TypeScript emits an error.
+
+### Conclusion
+
+Variance is an important concept to understand as you progress on your mastery of TypeScript.
+Many people fumble over the idea of contravariance in functions and get confused as to why there is an error.
+My goal here was to explain what and why, and so I'll leave you here with some tips to memorize the direction of variance:
+
+-   Covariance: **co**operate, `F<A>` and `F<B>` mirror `A` and `B`.
+-   Contravariance: **contra**dict, `F<A>` and `F<B>` are the opposite of `A` and `B`.
+-   Invariarnce: **in**different, `F<A>` and `F<B>` are stubborn and indifferent to `A` and `B`.
+-   Bivariance: **bi**directional, `F<A>` and `F<B>` work both ways regardless of `A` and `B`.
+
+[variancenotes]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-7/#optional-variance-annotations-for-type-parameters
 [unsoundarrays]: https://stackoverflow.com/a/60922930/18244921

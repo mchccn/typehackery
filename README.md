@@ -14,13 +14,13 @@ i will be writing a small tutorial that will hopefully teach you some of the tri
 the type system is powerful and shouldn't be gatekept!
 
 please note that i will assume you already have a basic understanding of typescript and how it works.
-if you do not understand any of the following topics or ideas, the book will not be for you.
+it is highly recommended that you at least know what the following ideas mean:
 
--   Duck/Structural Typing
--   Nominal Typing
--   Covariance/Contravariance/Invariance/Bivariance
--   Supertype/Subtype/Superset/Subset
--   Homomorphism
--   Finite State Machines
--   Functional Programming
--   Soundness
+-   duck/structural typing
+-   nominal typing
+-   covariance/contravariance/invariance/bivariance
+-   supertype/subtype/superset/subset
+-   homomorphism
+-   finite state machines
+-   functional programming
+-   soundness

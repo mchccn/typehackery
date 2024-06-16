@@ -13,7 +13,7 @@ It's a shame that only so few members of the community use TypeScript to its ful
 My mission is to make the knowledge of the type system easily accessible.
 
 I should preface this with the assumption that you already know a good bit.
-You should have a basic understanding of the following ideas:
+You should have a basic understanding (or at least know what they mean) of the following ideas:
 
 -   [Duck/Structural Typing][duck]
 -   [Nominal Typing][nominal]
